@@ -13,6 +13,9 @@ This project is about realising an artificial sunlight (wake-up light) system by
 + Depending on the board, a pwm module
 + Power source, prefably an adapter
 
+***Project budget:***
+[Go to Project Budget](https://docs.google.com/spreadsheets/d/1quyFzman1QwOtCFkKcF1BXIo6rP9FyXq6cBiZKglpdo/edit?usp=sharing)
+
 ## Requirements
 1. Wake-up time should be settable by the user by a HMI of any sort.
 2. Upon reaching the pre-set wake-up time, system should keep the leds open at full power, until one of the following occurs:
