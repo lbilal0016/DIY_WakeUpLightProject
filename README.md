@@ -20,6 +20,10 @@ This project is about realising an artificial sunlight (wake-up light) system by
    + A settable maximum time is reached, and the system still have not been turned off.
 3. Regardless of how the system is switched off, it should start at the same time the next day without the user having to re-set it.
 
+## Hardware list
+- Raspberry Pi Zero W
+- 
+
 
 
 
