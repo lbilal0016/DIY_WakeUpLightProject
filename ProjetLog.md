@@ -22,5 +22,3 @@
    * PWM regulation
 
 4.  Development of more advanced functions
-
-    *   
