@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import sys
 sys.path.append('/home/levent/Desktop/Project/DIY_WakeUpLightProject/config')
-import config
+import program_constants
 
 GPIO.setmode(GPIO.BOARD)  #   Broadcom Chip Numbering
 GPIO.setup(LED_PIN_BOARD, GPIO.OUT)
