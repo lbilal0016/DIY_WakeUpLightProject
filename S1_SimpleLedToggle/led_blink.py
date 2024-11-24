@@ -6,7 +6,7 @@ LED_PIN = 4
 PHY_PIN = 16
 
 GPIO.setmode(GPIO.BOARD)  #   Broadcom Chip Numbering
-GPIO.setup(LED_PIN, GPIO.OUT)
+GPIO.setup(PHY_PIN, GPIO.OUT)
 
 #   Toggling LED output to test the output
 try:
