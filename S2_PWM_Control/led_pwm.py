@@ -1,4 +1,7 @@
 import RPi.GPIO as GPIO
+import sys
+sys.path.append('/home/levent/Desktop/Project/DIY_WakeUpLightProject/config')
+from project_constants import *
 
 class LEDPWM:
     def __init__(self,pin):
@@ -6,7 +9,7 @@ class LEDPWM:
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(self.pin, GPIO.OUT)
         #   Set PWM frequency
-        self.pwm = GPIO.PWM(self.pin, 100)  
+        self.pwm = GPIO.PWM(self.pin, PWM_FREQUENCY)  
         #   Initial brightness
         self.pwm.start(0)
 
@@ -23,7 +26,7 @@ class LEDPWM:
     def __enter__(self):
          return self
     
-    def __exit__(self, exc_type, exc_value, traceback)
+    def __exit__(self, exc_type, exc_value, traceback):
          self.cleanup()
 
 
