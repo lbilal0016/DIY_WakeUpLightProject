@@ -28,3 +28,32 @@
 ### Log
 + Board setup complete: Headless setup. OS and network configuration settings were made using Raspberry Pi Imager. For support, the following video is really helpful: [The New Method to Setup Raspberry Pi Zero (2023 Tutorial)](https://www.youtube.com/watch?v=yn59qX-Td3E&list=PLWmGmAzSVdakg7OxVuu71WXp99VclC1tY, "Headless setup").
 + First getting started project was created: a blinking led.
+
+### Environment preperation after initialisation
+1. Update the packages:
+        
+        sudo apt update
+        sudo apt upgrade -y
+        sudo apt autoremove -y
+        sudo reboot
+2. Installing git:
+
+        sudo apt install git -y
+        git --version
+        git config --global user.name "username"
+        git config --global user.email "user@email.com"
+        git config --global credential.helper store
+        ##  user token will be saved after the first push
+3. Development tools:
+
+        sudo apt install python3 python3-pip -y
+        sudo apt install python3-rpi.gpio
+
+        sudo apt install build-essential -y
+        sudo raspi-config
+    >Interface options -> Activate "I2C" and "SPI" options
+    
+
+
+
+
