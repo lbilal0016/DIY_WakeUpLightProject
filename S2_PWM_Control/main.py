@@ -8,7 +8,7 @@ def main():
     with LEDPWM(PWM_PIN_BOARD) as led:
         try:
             while True:
-                brightness = input("Enter brightness level (0 - 100) or exit using 'q'")
+                brightness = input("Enter brightness level (0 - 100) or exit using 'q'\n")
 
                 if brightness.lower() == 'q':
                     print("\nProgram terminated ...")
