@@ -4,7 +4,7 @@ import time
 #   GPIO 4 will be used as LED project GPIO
 LED_PIN = 4
 
-GPIO.setmode(GPIO.BCM)  #   Broadcom Chip Numbering
+GPIO.setmode(GPIO.BOARD)  #   Broadcom Chip Numbering
 GPIO.setup(LED_PIN, GPIO.OUT)
 
 #   Toggling LED output to test the output
