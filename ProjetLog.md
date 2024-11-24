@@ -22,3 +22,9 @@
    * PWM regulation
 
 4.  Development of more advanced functions
+
+
+## 24.11.2024
+### Log
++ Board setup complete: Headless setup. OS and network configuration settings were made using Raspberry Pi Imager. For support, the following video is really helpful: [The New Method to Setup Raspberry Pi Zero (2023 Tutorial)](https://www.youtube.com/watch?v=yn59qX-Td3E&list=PLWmGmAzSVdakg7OxVuu71WXp99VclC1tY, "Headless setup").
++ First getting started project was created: a blinking led.

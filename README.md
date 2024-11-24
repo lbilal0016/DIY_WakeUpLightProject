@@ -24,8 +24,10 @@ This project is about realising an artificial sunlight (wake-up light) system by
 3. Regardless of how the system is switched off, it should start at the same time the next day without the user having to re-set it.
 
 ## Hardware list
-- Raspberry Pi Zero W
-- 
+- Raspberry Pi Zero WH
+- A Micro USB cable ([not an adapter, a simple micro usb cable is enough](https://www.amazon.de/Amazon-Basics-%C3%9Cbertragungsgeschwindigkeit-vergoldeten-Steckern/dp/B0711PVX6Z/ref=sr_1_1_ffob_sspa?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.oIsC04L7KUKZcaw-lx7j0vPDv5CFpfW7NreERp7BZc6JlQkmD5XKjPLTVToS-fuQOOjpgmQdjyxBA9vGx2jewByRtZ_xQOEo75JJB-OdaDF55YGbW7TeFn17kiQDLImTTHTkutg03t65RNl5T0Rqu7nDRxH9-dO7hk3_wmDL1KQJnKLvuL2Sd7cJyBImVsBLUiQWlgFbCqb4XjA-_FbbGZz3ZO-ckXvG3-QfEZEAXPIhQWaQjKDb1rkkR1K5ZJUtFVz6gAREJJcUPM95mlvUCqr5sE-e1I1i-zC6KoI9jHw.Yyja34Ou_4x1LVIVZlJSXKfRVZvegnNSxRRLTg_vdHY&dib_tag=se&keywords=micro+usb+cable&qid=1732449013&s=computers&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1, "Example from amazon"))
+- An electronic component kit or set for starting projects. [This one is used in this project](https://www.amazon.de/dp/B01J79YG8G?ref=ppx_yo2ov_dt_b_fed_asin_title, "Amazon link")
+- Micro SD card with a proper SD card adapter compatible with your PC
 
 
 
