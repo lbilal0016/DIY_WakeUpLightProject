@@ -5,7 +5,7 @@ from project_constants import *
 from led_pwm import LEDPWM
 
 def main():
-    with LEDPWM() as led:
+    with LEDPWM(PWM_PIN_BOARD) as led:
         try:
             while True:
                 brightness = input("Enter brightness level (0 - 100) or exit using 'q'")
