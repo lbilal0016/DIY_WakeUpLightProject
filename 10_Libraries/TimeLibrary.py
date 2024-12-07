@@ -9,7 +9,7 @@ MINUTES_IN_HOUR = 60
 HOURS_IN_DAY = 24
 
 class wakeUpTimeHourAndMinute():
-    def __init__(self, wakeUpHour=None, wakeUpMinute=None):
+    def __init__(self, wakeUpHour, wakeUpMinute):
         if wakeUpHour is None and wakeUpMinute is None:
             self._wakeUpHour = 0
             self._wakeUpMinute = 0
