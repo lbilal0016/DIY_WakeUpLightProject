@@ -20,6 +20,9 @@ class wakeUpTimeHourAndMinute():
     def __enter__(self):
         return self
     
+    def __exit__(self):
+        pass
+    
     def checkTimeValidity(self, hour, minute):
         if isinstance(hour, int) and isinstance(minute, int):
             if 0 <= hour < HOURS_IN_DAY or 0 <= minute < MINUTES_IN_HOUR:
