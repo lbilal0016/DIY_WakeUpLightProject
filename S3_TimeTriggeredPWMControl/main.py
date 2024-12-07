@@ -9,7 +9,7 @@ def main():
     with wakeUpTimeHourAndMinute(None, None) as alarmClock:
         try:
             while True:
-                wakeUpTime = input("Enter your desired wake-up time (hh:mm) or exit using 'q'\n")
+                wakeUpTime = input("Enter your desired wake-up time (hh,mm) or exit using 'q'\n")
                 
                 if wakeUpTime.lower() == 'q':
                     print("\nProgram terminated ...")
@@ -23,7 +23,7 @@ def main():
                             alarmClock.resetWakeUpTime(wakeUpHour, wakeUpMinute)
                             print(f"Wake-up time set to: {wakeUpHour:02d}:{wakeUpMinute:02d}")
                         #   Else case is already handled in checkTimeValidity method
-                        
+
                 except (ValueError, SyntaxError):
                     print("Error: Invalid input format. Please enter a tuple in the format (hh, mm) or enter q to exit.")
                 
