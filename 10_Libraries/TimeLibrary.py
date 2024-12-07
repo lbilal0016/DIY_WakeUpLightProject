@@ -13,7 +13,7 @@ class wakeUpTimeHourAndMinute():
         if wakeUpHour is None and wakeUpMinute is None:
             self._wakeUpHour = 0
             self._wakeUpMinute = 0
-        if(self.checkTimeValidity()):
+        if(self.checkTimeValidity(wakeUpHour, wakeUpMinute)):
             self._wakeUpHour = wakeUpHour
             self._wakeUpMinute = wakeUpMinute
 
@@ -39,7 +39,7 @@ class wakeUpTimeHourAndMinute():
         return time.localtime(time.time()).tm_min
     
     def resetWakeUpTime(self, wakeUpHour, wakeUpMinute):
-        if (self.checkTimeValidity()):
+        if (self.checkTimeValidity(wakeUpHour, wakeUpMinute)):
             self._wakeUpHour = wakeUpHour
             self._wakeUpMinute = wakeUpMinute
     
