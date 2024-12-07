@@ -6,7 +6,7 @@ from TimeLibrary import *
 import ast
 
 def main():
-    with wakeUpTimeHourAndMinute() as alarmClock:
+    with wakeUpTimeHourAndMinute(None, None) as alarmClock:
         try:
             while True:
                 wakeUpTime = input("Enter your desired wake-up time (hh:mm) or exit using 'q'\n")
