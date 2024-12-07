@@ -4,8 +4,6 @@ sys.path.append('/home/levent/Desktop/Project/DIY_WakeUpLightProject/10_Librarie
 from project_constants import *
 from PWM import *
 
-#   from led_pwm import LEDPWM
-
 def main():
     with LEDPWM(PWM_PIN_BOARD) as led:
         try:
