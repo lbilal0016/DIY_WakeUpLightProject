@@ -26,7 +26,7 @@ def main():
                     print("Error: Invalid input format. Please enter a tuple in the format (hh, mm) or enter q to exit.")
                 
                 timeRemaining = alarmClock.timeDiff()
-                print(f"Current system time: {alarmClock.getCurrentHour:02d}:{alarmClock.getCurrentMinute:02d}")
+                print(f"Current system time: {alarmClock.getCurrentHour():02d}:{alarmClock.getCurrentMinute():02d}")
                 print(f"Time remaining for wake-up alarm: {timeRemaining[0]:02d}:{timeRemaining[1]:02d}")
 
         except KeyboardInterrupt:
