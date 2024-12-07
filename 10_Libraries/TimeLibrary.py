@@ -5,24 +5,28 @@ import time
 sys.path.append('/home/levent/Desktop/Project/DIY_WakeUpLightProject/config')
 from project_constants import *
 
-
 MINUTES_IN_HOUR = 60
 HOURS_IN_DAY = 24
 
-class wakeupTimeHourAndMinute():
+class wakeUpTimeHourAndMinute():
     def __init__(self, wakeUpHour=None, wakeUpMinute=None):
         if wakeUpHour is None and wakeUpMinute is None:
             self._wakeUpHour = 0
             self._wakeUpMinute = 0
-            
-        elif isinstance(wakeUpHour, int) and isinstance(wakeUpMinute, int):
-            if wakeUpHour < HOURS_IN_DAY or wakeUpMinute < MINUTES_IN_HOUR:
-                self._wakeUpHour = wakeUpHour
-                self._wakeUpMinute = wakeUpMinute
+        if(self.checkTimeValidity()):
+            self._wakeUpHour = wakeUpHour
+            self._wakeUpMinute = wakeUpMinute
+
+    def __enter__(self):
+        return self
+    
+    def checkTimeValidity(self, hour, minute):
+        if isinstance(hour, int) and isinstance(minute, int):
+            if 0 <= hour < HOURS_IN_DAY or 0 <= minute < MINUTES_IN_HOUR:
+                return True
             else:
-                raise ValueError("Invalid arguments. Hour must be [0 - 23] and minute must be [0 - 59]")    
+                raise ValueError("Invalid arguments. Hour must be [0 - 23] and minute must be [0 - 59]")  
         else:
-            #   class arguments are invalid
             raise ValueError("Invalid arguments. Hour and minute arguments should be integer values")
 
     def getCurrentHour(self):
@@ -32,14 +36,9 @@ class wakeupTimeHourAndMinute():
         return time.localtime(time.time()).tm_min
     
     def resetWakeUpTime(self, wakeUpHour, wakeUpMinute):
-        if isinstance(wakeUpHour, int) and isinstance(wakeUpMinute, int):
-            if wakeUpHour < HOURS_IN_DAY or wakeUpMinute < MINUTES_IN_HOUR:
-                self._wakeUpHour = wakeUpHour
-                self._wakeUpMinute = wakeUpMinute
-            else:
-                raise ValueError("Invalid arguments. Hour must be [0 - 23] and minute must be [0 - 59]")  
-        else:
-            raise ValueError("Invalid arguments. Hour and minute arguments should be integer values")
+        if (self.checkTimeValidity()):
+            self._wakeUpHour = wakeUpHour
+            self._wakeUpMinute = wakeUpMinute
     
     def timeDiff(self):
         systemTimeMin = time.localtime(time.time()).tm_min
