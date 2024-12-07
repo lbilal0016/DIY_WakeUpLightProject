@@ -24,6 +24,9 @@ def main():
                         #   Else case is already handled in checkTimeValidity method
                 except (ValueError, SyntaxError):
                     print("Error: Invalid input format. Please enter a tuple in the format (hh, mm) or enter q to exit.")
+                
+                timeRemaining = alarmClock.timeDiff()
+                print(f"Time remaining for wake-up alarm: {timeRemaining[0]:02d}:{timeRemaining[1]:02d}")
 
         except KeyboardInterrupt:
             print("\nProgram terminated ...")
