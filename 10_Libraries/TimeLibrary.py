@@ -13,7 +13,7 @@ class wakeUpTimeHourAndMinute():
         if wakeUpHour is None and wakeUpMinute is None:
             self._wakeUpHour = 0
             self._wakeUpMinute = 0
-        if(self.checkTimeValidity(wakeUpHour, wakeUpMinute)):
+        elif(self.checkTimeValidity(wakeUpHour, wakeUpMinute)):
             self._wakeUpHour = wakeUpHour
             self._wakeUpMinute = wakeUpMinute
 
