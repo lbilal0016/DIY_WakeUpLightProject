@@ -20,6 +20,7 @@ def main():
                     if isinstance(wakeUpTimeTuple, tuple) and len(wakeUpTimeTuple) == 2:
                         wakeUpHour, wakeUpMinute = wakeUpTimeTuple
                         if(alarmClock.checkTimeValidity(wakeUpHour, wakeUpMinute)):
+                            alarmClock.resetWakeUpTime(wakeUpHour, wakeUpMinute)
                             print(f"Wake-up time set to: {wakeUpHour:02d}:{wakeUpMinute:02d}")
                         #   Else case is already handled in checkTimeValidity method
                 except (ValueError, SyntaxError):
