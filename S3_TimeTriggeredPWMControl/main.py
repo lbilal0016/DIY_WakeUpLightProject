@@ -42,7 +42,7 @@ def main():
                     if timeRemaining[1] <= 10:
                         #   Wake-up minute is approaching
                         print(f"Time remaining for wake-up: {timeRemaining[1]:02d} min")
-                        ledController.set_Brightness(ledController.calculateDutyCycleFromTimeRemaining(timeRemaining[1]))
+                        ledController.set_brightness(ledController.calculateDutyCycleFromTimeRemaining(timeRemaining[1]))
 
         except KeyboardInterrupt:
             print("\nProgram terminated ...")
