@@ -61,7 +61,7 @@
 
 ####    Bugfix: PWM Powered LED brightness control caused flickering
 
-PWM Control was successful, but there was an annoying flickering in LED. This caused by the RPi library which used software control for PWM modulation. To solve this problem, RPi was replaced by pigpio, which uses hardware control for pwm modulation. 
+PWM Control was successful, but there was an annoying flickering in LED. This caused by the RPi library which used software control for PWM modulation. To solve this problem, RPi was replaced by pigpio, which uses hardware control for pwm modulation. [pigpio library](https://abyz.me.uk/rpi/pigpio/python.html)
 
 Unfortunately, pigpio does not support board pin numbering, so the pin number for pwm output was replaced by GPIO number. The current board numbering for Raspberry Pi Zero WH can be checked from [this link](https://pinout.xyz/pinout/pin12_gpio18/).
 
