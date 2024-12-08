@@ -18,6 +18,17 @@ class LEDPWM:
                 self.pwm.ChangeDutyCycle(brightness)
             else:
                 print("Please enter a pwm duty cycle between 0 - 100")
+    
+    def calculateDutyCycleFromTimeRemaining(self, minutesRemaining):
+        if not 0 <= minutesRemaining < 60:
+            raise ValueError("Invalid arguments. Remaining minutes must be in range [0 - 59]")  
+        
+        #   PWM Duty Cycle calculation begins with minutes remaining smaller than time elapsed between dawn and sunrise
+        if minutesRemaining > DAWN_TO_SUNRISE_MIN:
+             dutyCycle = 0
+        else:
+            dutyCycle = 1 - (minutesRemaining / DAWN_TO_SUNRISE_MIN)
+        return int(dutyCycle * 100)
             
     def cleanup(self):
         self.pwm.stop()
