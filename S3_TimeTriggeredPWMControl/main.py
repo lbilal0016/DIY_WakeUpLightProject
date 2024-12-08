@@ -39,7 +39,7 @@ def main():
                 timeRemaining = alarmClock.timeDiff()
                 if timeRemaining[0] == 0:
                     #   Wake-up hour has come
-                    if timeRemaining[1] <= 10:
+                    if timeRemaining[1] <= DAWN_TO_SUNRISE_MIN:
                         #   Wake-up minute is approaching
                         dutyCycle = ledController.calculateDutyCycleFromTimeRemaining(timeRemaining[1])
                         debugCounter = 0
