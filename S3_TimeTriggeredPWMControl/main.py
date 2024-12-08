@@ -13,12 +13,12 @@ def main():
         try:
             wakeUpTimeSet = False
             while True:
-                if wakeUpTimeSet is False:
+                if wakeUpTimeSet is not True:
                     wakeUpTime = input("Enter your desired wake-up time (hh,mm) or exit using 'q'\n")
                 
                     if wakeUpTime.lower() == 'q':
                         print("\nProgram terminated ...")
-                        break
+                        return
 
                     try:
                         wakeUpTimeTuple = ast.literal_eval(wakeUpTime)
@@ -36,15 +36,14 @@ def main():
                     timeRemaining = alarmClock.timeDiff()
                     print(f"Current system time: {alarmClock.getCurrentHour():02d}:{alarmClock.getCurrentMinute():02d}")
                     print(f"Time remaining for wake-up alarm: {timeRemaining[0]:02d}:{timeRemaining[1]:02d}")
-            
-            timeRemaining = alarmClock.timeDiff()
-            print(f"timeRemaining = {timeRemaining}")
-            if timeRemaining[0] == 0:
-                #   Wake-up hour has come
-                if timeRemaining[1] <= 10:
-                    #   Wake-up minute is approaching
-                    print(f"Time remaining for wake-up: {timeRemaining[1]:02d} min")
-                    ledController.setBrightness(ledController.calculateDutyCycleFromTimeRemaining(timeRemaining[1]))
+                timeRemaining = alarmClock.timeDiff()
+                print(f"timeRemaining = {timeRemaining}")
+                if timeRemaining[0] == 0:
+                    #   Wake-up hour has come
+                    if timeRemaining[1] <= 10:
+                        #   Wake-up minute is approaching
+                        print(f"Time remaining for wake-up: {timeRemaining[1]:02d} min")
+                        ledController.setBrightness(ledController.calculateDutyCycleFromTimeRemaining(timeRemaining[1]))
 
         except KeyboardInterrupt:
             print("\nProgram terminated ...")
