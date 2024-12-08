@@ -38,6 +38,7 @@ def main():
                     print(f"Time remaining for wake-up alarm: {timeRemaining[0]:02d}:{timeRemaining[1]:02d}")
             
             timeRemaining = alarmClock.timeDiff()
+            print(f"timeRemaining = {timeRemaining}")
             if timeRemaining[0] == 0:
                 #   Wake-up hour has come
                 if timeRemaining[1] <= 10:
