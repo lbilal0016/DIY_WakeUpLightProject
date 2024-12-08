@@ -54,6 +54,30 @@
         sudo raspi-config
     >Interface options -> Activate "I2C" and "SPI" options
     
+## 08.12.2024
+### Log
++ Time library was developed as a new class.
++ PWM functions were also enhanced to a new class
+
+####    Bugfix: PWM Powered LED brightness control caused flickering
+
+PWM Control was successful, but there was an annoying flickering in LED. This caused by the RPi library which used software control for PWM modulation. To solve this problem, RPi was replaced by pigpio, which uses hardware control for pwm modulation. 
+
+Unfortunately, pigpio does not support board pin numbering, so the pin number for pwm output was replaced by GPIO number. The current board numbering for Raspberry Pi Zero WH can be checked from [this link](https://pinout.xyz/pinout/pin12_gpio18/).
+
+Also, to start pigpio Daemon, which is an interface for pigpio library, following commands should be entered:
+
+Start pigpio Daemon
+
+        sudo pigpiod
+Validate that pigpio Daemon is running
+
+        ps aux | grep pigpiod
+
+Automatically start pigpio Daemon during startup
+
+        sudo systemctl enable pigpiod
+        sudo systemctl start pigpiod
 
 
 
