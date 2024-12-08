@@ -9,7 +9,7 @@ from TimeLibrary import *
 from PWM import *
 
 def main():
-    with wakeUpTimeHourAndMinute(None, None) as alarmClock, LEDPWM(PWM_PIN_BOARD) as ledController:
+    with wakeUpTimeHourAndMinute(None, None) as alarmClock, LEDPWM(PWM_PIN_GPIO) as ledController:
         try:
             wakeUpTimeSet = False
             while True:
