@@ -12,6 +12,7 @@ To control the brightness of a regular light bulb, an AC Light dimmer circuit is
 ### Required material
 + [An AC power cable, similar to this one](https://www.bauhaus.info/gurtwickler/wir-elektronik-anschlusskabel-8er-serie/p/29222289?utm_source=google&utm_medium=ssa&utm_id=17397527735_150014389570&cid=SSAGoo17397527735_150014389570&gad_source=1&gclid=CjwKCAiAmfq6BhAsEiwAX1jsZzUjwetNE-81AkUrYsTepOIlx-24dFoZCR0-ilMvJqERUiIIw3HjVhoCPXkQAvD_BwE "Anschlusskabel mit Stecker")
 + [A light bulb socket, similar to this one. (Note that the socket on your lamp may also be modified to achieve the same goal)](https://www.bauhaus.info/lampenfassungen/voltomat-lampenfassung-mit-glattmantel/p/12209139, "Voltomat Lampenfassung mit Glattmantel")
++ [AC light dimmer module](https://www.ebay.de/itm/165592423044?chn=ps&_ul=DE&norover=1&mkevt=1&mkrid=707-166974-037691-2&mkcid=2&mkscid=101&itemid=165592423044&targetid=2274951440814&device=c&mktype=pla&googleloc=9042523&poi=&campaignid=21875900095&mkgroupid=166776655901&rlsatarget=pla-2274951440814&abcId=10084851&merchantid=5453901904&geoid=9042523&gad_source=1&gclid=CjwKCAiAmfq6BhAsEiwAX1jsZ1l6eYhq0Vgrkq0s3rit1QIcjD6vLQpmgmHxeN3VVnNn9mRIzGA1vRoC1fkQAvD_BwE "Ebay link")
 
 ## 08.12.2024
 ### Log
