@@ -1,28 +1,42 @@
 # Project Log
-## Project start: 17.11.2024
-
+## 15.12.2024
 ### Log
-+   Initial requirements to the project have been defined
-+   Initial hardware requirements have been defined
-+   Roadmap have been defined
++ Methods to drive a regular IKEA light bulb was researched
++ Necessary material to realise PWM control on a light bulb was researched
 
-### Roadmap
+### Method for driving a light bulb using PWM output of control board
+To control the brightness of a regular light bulb, an AC Light dimmer circuit is required. That kind of circuit can be a DIY Project on its own, but in this project it will be purchased as material.
 
-1. Essential hardware will be supplied
-2. Warm-up with the development environment
+[This circuit is compatible with raspberry pi boards](https://www.amazon.de/RobotDYN-PWM-Programmierbarer-Lichtdimmer-110/dp/B07KDNMTSF "RobotDYN PWM Ac Programmierbarer Lichtdimmer")
 
-    *   Initialising the development environment
-    *   Connecting to the development environment remotely
-    *   Setting up the python interpreter
-    *   Fetching development libraries
-  
-3. Initiating basic functionality:
-   
-   * Powering LED strips
-   * PWM regulation
+### Required material
++ [An AC power cable, similar to this one](https://www.bauhaus.info/gurtwickler/wir-elektronik-anschlusskabel-8er-serie/p/29222289?utm_source=google&utm_medium=ssa&utm_id=17397527735_150014389570&cid=SSAGoo17397527735_150014389570&gad_source=1&gclid=CjwKCAiAmfq6BhAsEiwAX1jsZzUjwetNE-81AkUrYsTepOIlx-24dFoZCR0-ilMvJqERUiIIw3HjVhoCPXkQAvD_BwE "Anschlusskabel mit Stecker")
++ [A light bulb socket, similar to this one. (Note that the socket on your lamp may also be modified to achieve the same goal)](https://www.bauhaus.info/lampenfassungen/voltomat-lampenfassung-mit-glattmantel/p/12209139, "Voltomat Lampenfassung mit Glattmantel")
 
-4.  Development of more advanced functions
+## 08.12.2024
+### Log
++ Time library was developed as a new class.
++ PWM functions were also enhanced to a new class
 
+####    Bugfix: PWM Powered LED brightness control caused flickering
+
+PWM Control was successful, but there was an annoying flickering in LED. This caused by the RPi library which used software control for PWM modulation. To solve this problem, RPi was replaced by pigpio, which uses hardware control for pwm modulation. [pigpio library](https://abyz.me.uk/rpi/pigpio/python.html)
+
+Unfortunately, pigpio does not support board pin numbering, so the pin number for pwm output was replaced by GPIO number. The current board numbering for Raspberry Pi Zero WH can be checked from [this link](https://pinout.xyz/pinout/pin12_gpio18/).
+
+Also, to start pigpio Daemon, which is an interface for pigpio library, following commands should be entered:
+
+Start pigpio Daemon
+
+        sudo pigpiod
+Validate that pigpio Daemon is running
+
+        ps aux | grep pigpiod
+
+Automatically start pigpio Daemon during startup
+
+        sudo systemctl enable pigpiod
+        sudo systemctl start pigpiod
 
 ## 24.11.2024
 ### Log
@@ -53,31 +67,33 @@
         sudo apt install build-essential -y
         sudo raspi-config
     >Interface options -> Activate "I2C" and "SPI" options
-    
-## 08.12.2024
+
+## Project start: 17.11.2024
+
 ### Log
-+ Time library was developed as a new class.
-+ PWM functions were also enhanced to a new class
++   Initial requirements to the project have been defined
++   Initial hardware requirements have been defined
++   Roadmap have been defined
 
-####    Bugfix: PWM Powered LED brightness control caused flickering
+### Roadmap
 
-PWM Control was successful, but there was an annoying flickering in LED. This caused by the RPi library which used software control for PWM modulation. To solve this problem, RPi was replaced by pigpio, which uses hardware control for pwm modulation. [pigpio library](https://abyz.me.uk/rpi/pigpio/python.html)
+1. Essential hardware will be supplied
+2. Warm-up with the development environment
 
-Unfortunately, pigpio does not support board pin numbering, so the pin number for pwm output was replaced by GPIO number. The current board numbering for Raspberry Pi Zero WH can be checked from [this link](https://pinout.xyz/pinout/pin12_gpio18/).
+    *   Initialising the development environment
+    *   Connecting to the development environment remotely
+    *   Setting up the python interpreter
+    *   Fetching development libraries
+  
+3. Initiating basic functionality:
+   
+   * Powering LED strips
+   * PWM regulation
 
-Also, to start pigpio Daemon, which is an interface for pigpio library, following commands should be entered:
+4.  Development of more advanced functions
 
-Start pigpio Daemon
 
-        sudo pigpiod
-Validate that pigpio Daemon is running
-
-        ps aux | grep pigpiod
-
-Automatically start pigpio Daemon during startup
-
-        sudo systemctl enable pigpiod
-        sudo systemctl start pigpiod
+    
 
 
 
