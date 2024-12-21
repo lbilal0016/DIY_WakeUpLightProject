@@ -1,4 +1,26 @@
 # Project Log
+## 21.12.2024
+### Log
+
++ Due to some complexities regarding AC drive to power up the project with standard IKEA light bulbs, the project will firstly be realised with LED strips. To this end, some equipment was bought
++ Research for powering up the system with LED strips
++ Project budget updated
+
+### PWM Control for LED Strips (This part will later be documented in README)
+To control the brightness of the LED strip using pwm signal:
+
+1. Use a MOSFET. We will be using [IRLZ44N](https://www.amazon.de/dp/B01FUV0ZZ8?ref=ppx_yo2ov_dt_b_fed_asin_title)
+2. Make the following connection
+
+        24V (+) ----------- LED Strip (+)
+
+        LED Strip (-) ---- MOSFET (Drain, D)
+
+        MOSFET (Source, S) ---- 24V (-) (GND)
+
+        MOSFET (Gate, G) ---- Raspberry Pi PWM Output (GPIO Pin)
+3. For more detailed connection plan, see the 30_UsefulDocuments/LED_Strip_ConnectionPlan.png
+
 ## 15.12.2024
 ### Log
 + Methods to drive a regular IKEA light bulb was researched

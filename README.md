@@ -29,6 +29,10 @@ This project is about realising an artificial sunlight (wake-up light) system by
 - An electronic component kit or set for starting projects. [This one is used in this project](https://www.amazon.de/dp/B01J79YG8G?ref=ppx_yo2ov_dt_b_fed_asin_title, "Amazon link")
 - Micro SD card with a proper SD card adapter compatible with your PC
 
+## How to guide
+
+
+
 
 
 
